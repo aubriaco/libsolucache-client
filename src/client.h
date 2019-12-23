@@ -1,3 +1,9 @@
+/*
+** SoluCache Client by Alessandro Ubriaco
+**
+** Copyright (c) 2019 Alessandro Ubriaco
+**
+*/
 #ifndef __CLIENT_INCLUDED__
 #define __CLIENT_INCLUDED__
 #include <solusek/solusek.h>

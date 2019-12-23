@@ -1,3 +1,9 @@
+/*
+** SoluCache Client by Alessandro Ubriaco
+**
+** Copyright (c) 2019 Alessandro Ubriaco
+**
+*/
 #include "client.h"
 
 namespace solucache

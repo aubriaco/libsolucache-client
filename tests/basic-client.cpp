@@ -1,3 +1,9 @@
+/*
+** SoluCache Client by Alessandro Ubriaco
+**
+** Copyright (c) 2019 Alessandro Ubriaco
+**
+*/
 #include <solucache/client.h>
 
 int main(int argc, char *argv[])
