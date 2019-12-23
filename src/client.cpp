@@ -83,4 +83,21 @@ namespace solucache
     writeKey(Socket, key);
     return readData(Socket);
   }
+
+  void CClient::expires(const std::string& key, time_t t)
+  {
+    writeAction(Socket, 5);
+    writeKey(Socket, key);
+    Socket->writeBuffer(&t, 8);
+  }
+
+  void CClient::dispose()
+  {
+    delete this;
+  }
+
+  IClient *createClient()
+  {
+    return new CClient();
+  }
 }

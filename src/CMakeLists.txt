@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 ## Use the variable PROJECT_NAME for changing the target name
-set( PROJECT_NAME "solucache" )
+set( PROJECT_NAME "solucache-client" )
 
 ## Set our project name
 project(${PROJECT_NAME})
@@ -30,3 +30,8 @@ install(TARGETS ${PROJECT_NAME}
           DESTINATION /usr/local/lib
           COMPONENT Libraries)
 install(DIRECTORY ../include/ DESTINATION /usr/local/include)
+
+
+add_executable("test-basic-client" "../tests/basic-client.cpp")
+include_directories("test-basic-client" "${CMAKE_SOURCE_DIR}/../include/")
+target_link_libraries("test-basic-client" solucache-client solusek ssl crypto)

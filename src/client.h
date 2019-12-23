@@ -16,6 +16,8 @@ namespace solucache
     bool connect(const std::string& host, int port = 18001);
     void put(const std::string& key, std::vector<unsigned char>& data);
     std::vector<unsigned char> get(const std::string& key);
+    void expires(const std::string& key, time_t t);
+    void dispose();
   };
 }
 
