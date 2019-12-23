@@ -17,6 +17,8 @@ namespace solucache
     void put(const std::string& key, std::vector<unsigned char>& data);
     std::vector<unsigned char> get(const std::string& key);
     void expires(const std::string& key, time_t t);
+    void push(const std::string& key, std::vector<unsigned char>& data);
+    std::vector<unsigned char> pop(const std::string& key);
     void dispose();
   };
 }

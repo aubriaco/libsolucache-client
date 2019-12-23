@@ -91,6 +91,20 @@ namespace solucache
     Socket->writeBuffer(&t, 8);
   }
 
+  void CClient::push(const std::string& key, std::vector<unsigned char>& data)
+  {
+    writeAction(Socket, 3);
+    writeKey(Socket, key);
+    writeData(Socket, data);
+  }
+
+  std::vector<unsigned char> CClient::pop(const std::string& key)
+  {
+    writeAction(Socket, 4);
+    writeKey(Socket, key);
+    return readData(Socket);
+  }
+
   void CClient::dispose()
   {
     delete this;
