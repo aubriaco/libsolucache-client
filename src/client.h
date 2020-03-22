@@ -6,7 +6,7 @@
 */
 #ifndef __CLIENT_INCLUDED__
 #define __CLIENT_INCLUDED__
-#include <solusek/solusek.h>
+#include <solunet.h>
 #include <solucache/client.h>
 
 namespace solucache
@@ -14,7 +14,7 @@ namespace solucache
   class CClient : public IClient
   {
   private:
-    solusek::INetHandlerSocket *Socket;
+    solunet::ISocket *Socket;
   public:
     CClient() {}
     ~CClient();

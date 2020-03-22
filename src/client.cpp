@@ -8,7 +8,7 @@
 
 namespace solucache
 {
-  std::string readKey(solusek::INetHandlerSocket *socket)
+  std::string readKey(solunet::ISocket *socket)
   {
   	std::string key;
   	size_t sz = 0;
@@ -22,7 +22,7 @@ namespace solucache
   	return key;
   }
 
-  std::vector<unsigned char> readData(solusek::INetHandlerSocket *socket)
+  std::vector<unsigned char> readData(solunet::ISocket *socket)
   {
   	std::vector<unsigned char> data;
   	size_t sz = 0;
@@ -40,12 +40,12 @@ namespace solucache
   	return data;
   }
 
-  void writeAction(solusek::INetHandlerSocket *socket, int action)
+  void writeAction(solunet::ISocket *socket, int action)
   {
     socket->writeBuffer(&action, 4);
   }
 
-  void writeKey(solusek::INetHandlerSocket *socket, std::string data)
+  void writeKey(solunet::ISocket *socket, std::string data)
   {
   	size_t sz = data.size();
   	socket->writeBuffer(&sz, 8);
@@ -55,7 +55,7 @@ namespace solucache
   	}
   }
 
-  void writeData(solusek::INetHandlerSocket *socket, std::vector<unsigned char>& data)
+  void writeData(solunet::ISocket *socket, std::vector<unsigned char>& data)
   {
   	size_t sz = data.size();
   	socket->writeBuffer(&sz, 8);
@@ -72,7 +72,7 @@ namespace solucache
 
   bool CClient::connect(const std::string& host, int port)
   {
-    Socket = solusek::createNetHandlerSocket();
+    Socket = solunet::createSocket();
     return Socket->connect(host.c_str(), port);
   }
 
